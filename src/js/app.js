@@ -3,6 +3,11 @@ var $canvas = $("canvas");
 var context = $canvas[0].getContext("2d");
 var lastEvent;
 var mouseDown = false;
+context.canvas.width = $('.container').width();
+$(window).on('resize', function(){
+  context.canvas.width = $('.container').width();
+});
+
 
 //When clicking on control list items
 $(".controls").on("click", "li", function(){
@@ -13,7 +18,7 @@ $(".controls").on("click", "li", function(){
   //cache current color
   color = $(this).css("background-color");
 });
-  
+
 //When "New Color" is pressed
 $("#revealColorSelect").click(function(){
   //Show color select or hide the color select

@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Drawing Canvas App</title>
+	<title>Drawing App</title>
 	<link rel="stylesheet" href="/dist/assets/css/main.css" type="text/css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
-	<nav>
-		<
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">
+	        <span>Drawing App</span>
+	      </a>
+	    </div>
+	  </div>
 	</nav>
-	<canvas	width="800" height="600"></canvas>
+	<div class="container">
+			<canvas height="650"></canvas>
+	</div>
+
 	<div class="controls">
-		<ul>
+		<ul class="list-unstyled clearfix">
 			<li class="red selected"></li>
+			<li class="green"></li>
 			<li class="blue"></li>
-			<li class="yellow"></li>
 		</ul>
 		<button id="revealColorSelect">New Color</button>
 		<div id="colorSelect">

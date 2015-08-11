@@ -7274,14 +7274,29 @@ button.close {
   }
 }
 body {
-  background: black;
+  background-color: #000;
 }
 
 canvas {
   background: #fff;
   display: block;
-  margin: 50px auto 10px;
   border-radius: 5px;
-  box-shadow: 0 4px 0 0 #222;
+  box-shadow: 5px 5px 12px 0px #333;
   cursor: url(../img/cursor.png), crosshair;
+}
+
+.controls ul li {
+  width: 75px;
+  height: 75px;
+  margin: 10px;
+  float: left;
+}
+.controls ul li.red {
+  background-color: red;
+}
+.controls ul li.green {
+  background-color: green;
+}
+.controls ul li.blue {
+  background-color: blue;
 }
