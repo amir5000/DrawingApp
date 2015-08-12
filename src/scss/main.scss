@@ -12,12 +12,28 @@ canvas {
 	cursor: url(../img/cursor.png), crosshair;
 }
 
+.navbar {
+	border-radius: 0;
+	background-color: pink;
+	border: none;
+
+	&.navbar-default {
+		.navbar-brand	{
+			color: #000;
+		}
+	}
+}
+
 .controls {
+	margin: 50px 0 20px;
+	padding: 30px 15px;
+	background-color: white;
 	ul li {
 		width: 75px;
 		height: 75px;
 		margin: 10px;
 		float: left;
+		cursor: pointer;
 		&.red {
 			background-color: red;
 		}
@@ -29,5 +45,19 @@ canvas {
 		&.blue {
 			background-color: blue;
 		}
+	}
+
+	#colorSelect {
+		display: none;
+		.sliders {
+			width: 50%;
+		}
+	}
+
+	#newColor {
+		display: block;
+		width: 75px;
+		height: 75px;
+		margin: 10px;
 	}
 }

@@ -7285,11 +7285,26 @@ canvas {
   cursor: url(../img/cursor.png), crosshair;
 }
 
+.navbar {
+  border-radius: 0;
+  background-color: pink;
+  border: none;
+}
+.navbar.navbar-default .navbar-brand {
+  color: #000;
+}
+
+.controls {
+  margin: 50px 0 20px;
+  padding: 30px 15px;
+  background-color: white;
+}
 .controls ul li {
   width: 75px;
   height: 75px;
   margin: 10px;
   float: left;
+  cursor: pointer;
 }
 .controls ul li.red {
   background-color: red;
@@ -7299,4 +7314,16 @@ canvas {
 }
 .controls ul li.blue {
   background-color: blue;
+}
+.controls #colorSelect {
+  display: none;
+}
+.controls #colorSelect .sliders {
+  width: 50%;
+}
+.controls #newColor {
+  display: block;
+  width: 75px;
+  height: 75px;
+  margin: 10px;
 }

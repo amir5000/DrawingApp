@@ -6,7 +6,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
+	  <div class="container">
 	    <div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 	        <span class="sr-only">Toggle navigation</span>
@@ -21,30 +21,29 @@
 	  </div>
 	</nav>
 	<div class="container">
-			<canvas height="650"></canvas>
+			<canvas height="600"></canvas>
 	</div>
-
 	<div class="controls">
 		<ul class="list-unstyled clearfix">
 			<li class="red selected"></li>
 			<li class="green"></li>
 			<li class="blue"></li>
 		</ul>
-		<button id="revealColorSelect">New Color</button>
+		<button id="revealColorSelect" class="btn btn-primary">New Color</button>
 		<div id="colorSelect">
 			<span id="newColor"></span>
 			<div class="sliders">
 				<p>
 					<label for="red">Red</label>
-					<input id="red" name="red" type="range" min=0 max=255 value=0>
+					<input class="form-control" id="red" name="red" type="range" min=0 max=255 value=0>
 				</p>
 				<p>
 					<label for="green">Green</label>
-					<input id="green" name="green" type="range" min=0 max=255 value=0>
+					<input class="form-control" id="green" name="green" type="range" min=0 max=255 value=0>
 				</p>
 				<p>
 					<label for="blue">Blue</label>
-					<input id="blue" name="blue" type="range" min=0 max=255 value=0>
+					<input class="form-control" id="blue" name="blue" type="range" min=0 max=255 value=0>
 				</p>
 			</div>
 			<div>
