@@ -18,7 +18,7 @@
   border: 1px solid transparent;
   white-space: nowrap;
   opacity: 1;
-  @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $btn-border-radius-large);
+  @include button-size(($padding-base-vertical * 1.5 ), ($padding-base-horizontal * 3), ($font-size-base * 1.25), $line-height-base, $btn-border-radius-large);
   @include user-select(none);
   @include transition(all 0.5s ease);
 
