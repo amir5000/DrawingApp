@@ -7306,6 +7306,11 @@ canvas {
   float: left;
   cursor: pointer;
 }
+.controls ul li.selected {
+  border: 2px solid #000;
+  box-sizing: border-box;
+  box-shadow: inset 0px 0px 12px 2px #fff;
+}
 .controls ul li.red {
   background-color: red;
 }
