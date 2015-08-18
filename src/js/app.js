@@ -23,7 +23,7 @@ $(".controls").on("click", "li", function(){
 $("#revealColorSelect").click(function(){
   //Show color select or hide the color select
   changeColor();
-  $("#colorSelect").toggle();
+  $("#colorSelect").slideToggle();
 });
 
 //update the new color span

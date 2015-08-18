@@ -7294,6 +7294,10 @@ canvas {
   color: #000;
 }
 
+.btn .caret {
+  margin: 0 0 0 10px;
+}
+
 .controls {
   margin: 50px 0 20px;
   padding: 30px 15px;
