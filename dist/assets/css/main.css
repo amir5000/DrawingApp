@@ -7303,6 +7303,10 @@ canvas {
   padding: 30px 15px;
   background-color: white;
 }
+.controls ul {
+  width: 50%;
+  float: left;
+}
 .controls ul li {
   width: 75px;
   height: 75px;
@@ -7326,9 +7330,8 @@ canvas {
 }
 .controls #colorSelect {
   display: none;
-}
-.controls #colorSelect .sliders {
   width: 50%;
+  float: right;
 }
 .controls #newColor {
   display: block;

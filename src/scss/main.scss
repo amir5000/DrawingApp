@@ -34,35 +34,38 @@ canvas {
 	margin: 50px 0 20px;
 	padding: 30px 15px;
 	background-color: white;
-	ul li {
-		width: 75px;
-		height: 75px;
-		margin: 10px;
+	ul {
+		width: 50%;
 		float: left;
-		cursor: pointer;
-		&.selected {
-	    border: 2px solid #000;
-	    box-sizing: border-box;
-			box-shadow: inset 0px 0px 12px 2px #fff;
-	}
-		&.red {
-			background-color: red;
-		}
+		li {
+			width: 75px;
+			height: 75px;
+			margin: 10px;
+			float: left;
+			cursor: pointer;
+			&.selected {
+		    border: 2px solid #000;
+		    box-sizing: border-box;
+				box-shadow: inset 0px 0px 12px 2px #fff;
+			}
+			&.red {
+				background-color: red;
+			}
 
-		&.green {
-			background-color: green;
-		}
+			&.green {
+				background-color: green;
+			}
 
-		&.blue {
-			background-color: blue;
+			&.blue {
+				background-color: blue;
+			}
 		}
 	}
 
 	#colorSelect {
 		display: none;
-		.sliders {
-			width: 50%;
-		}
+		width: 50%;
+		float: right;
 	}
 
 	#newColor {
