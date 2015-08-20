@@ -58,6 +58,7 @@ $canvas.mousedown(function(e){
     context.moveTo(lastEvent.offsetX, lastEvent.offsetY);
     context.lineTo(e.offsetX, e.offsetY);
     context.strokeStyle = color;
+    context.lineWidth = 15;
     context.stroke();
     lastEvent = e;
   }
