@@ -3,7 +3,10 @@ var $canvas = $("canvas");
 var context = $canvas[0].getContext("2d");
 var lastEvent;
 var mouseDown = false;
+var stroke = 15;
+
 context.canvas.width = $('.container').width();
+$('#strokeVal').text(stroke);
 $(window).on('resize', function(){
   context.canvas.width = $('.container').width();
 });
@@ -34,8 +37,14 @@ function changeColor() {
   $("#newColor").css("background-color", "rgb(" + r + "," + g +", " + b + ")");
 }
 
+function changeStroke() {
+  stroke = $(this).val();
+  $('#strokeVal').text(stroke);
+}
+
 //When color sliders change
-$("input[type=range]").change(changeColor);
+$("#stroke").change(changeStroke);
+$(".sliders input[type=range]").change(changeColor);
 
 //When "Add Color" is pressed
 $("#addNewColor").click(function(){
@@ -58,7 +67,7 @@ $canvas.mousedown(function(e){
     context.moveTo(lastEvent.offsetX, lastEvent.offsetY);
     context.lineTo(e.offsetX, e.offsetY);
     context.strokeStyle = color;
-    context.lineWidth = 15;
+    context.lineWidth = stroke;
     context.stroke();
     lastEvent = e;
   }
