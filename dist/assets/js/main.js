@@ -6,7 +6,7 @@ var mouseDown = false;
 var stroke = 15;
 
 context.canvas.width = $('.container').width();
-$('#strokeVal').text(stroke);
+$('#strokeVal').text(stroke + ' px');
 $(window).on('resize', function(){
   context.canvas.width = $('.container').width();
 });
@@ -39,7 +39,7 @@ function changeColor() {
 
 function changeStroke() {
   stroke = $(this).val();
-  $('#strokeVal').text(stroke);
+  $('#strokeVal').text(stroke + ' px');
 }
 
 //When color sliders change

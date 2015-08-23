@@ -7327,6 +7327,10 @@ canvas {
 .controls ul li.blue {
   background-color: blue;
 }
+.controls .stroke-width {
+  clear: both;
+  width: 50%;
+}
 .controls #colorSelect {
   display: none;
   width: 50%;
