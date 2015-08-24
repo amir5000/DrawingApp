@@ -7,6 +7,7 @@ var stroke = 15;
 
 context.canvas.width = $('.container').width();
 $('#strokeVal').text(stroke + ' px');
+$('#strokeBox').width(stroke).css('background-color', color);
 $(window).on('resize', function(){
   context.canvas.width = $('.container').width();
 });
@@ -20,6 +21,7 @@ $(".controls").on("click", "li", function(){
   $(this).addClass("selected");
   //cache current color
   color = $(this).css("background-color");
+  $('#strokeBox').css('background-color', color);
 });
 
 //When "New Color" is pressed
@@ -40,6 +42,7 @@ function changeColor() {
 function changeStroke() {
   stroke = $(this).val();
   $('#strokeVal').text(stroke + ' px');
+  $('#strokeBox').width(stroke);
 }
 
 //When color sliders change

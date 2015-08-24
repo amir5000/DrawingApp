@@ -63,7 +63,12 @@ canvas {
 
 	.stroke-width {
 		clear: both;
-		width: 50%;
+		width: 40%;
+		#strokeBox {
+			display: inline-block;
+			margin: 10px 0 0 10px;
+			height: 10px;
+		}
 	}
 
 	#colorSelect {

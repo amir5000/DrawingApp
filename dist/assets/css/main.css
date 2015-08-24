@@ -7329,7 +7329,12 @@ canvas {
 }
 .controls .stroke-width {
   clear: both;
-  width: 50%;
+  width: 40%;
+}
+.controls .stroke-width #strokeBox {
+  display: inline-block;
+  margin: 10px 0 0 10px;
+  height: 10px;
 }
 .controls #colorSelect {
   display: none;
