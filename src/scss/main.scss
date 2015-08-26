@@ -58,6 +58,15 @@ canvas {
 			&.blue {
 				background-color: blue;
 			}
+
+			&.white {
+				border: 2px solid #000;
+				background-color: white;
+
+				&.selected {
+					box-shadow: inset 0px 0px 12px 2px #000;
+				}
+			}
 		}
 	}
 

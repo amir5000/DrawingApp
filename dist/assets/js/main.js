@@ -3,7 +3,7 @@ var $canvas = $("canvas");
 var context = $canvas[0].getContext("2d");
 var lastEvent;
 var mouseDown = false;
-var stroke = 15;
+var stroke = 7;
 
 context.canvas.width = $('.container').width();
 $('#strokeVal').text(stroke + ' px');
@@ -16,7 +16,8 @@ $(window).on('resize', function(){
 //When clicking on control list items
 $(".controls").on("click", "li", function(){
   //Deselect sibling elements
-  $(this).siblings().removeClass("selected");
+  console.log($(this));
+  $(".controls li").removeClass("selected");
   //Select clicked element
   $(this).addClass("selected");
   //cache current color

@@ -7327,6 +7327,13 @@ canvas {
 .controls ul li.blue {
   background-color: blue;
 }
+.controls ul li.white {
+  border: 2px solid #000;
+  background-color: white;
+}
+.controls ul li.white.selected {
+  box-shadow: inset 0px 0px 12px 2px #000;
+}
 .controls .stroke-width {
   clear: both;
   width: 40%;
