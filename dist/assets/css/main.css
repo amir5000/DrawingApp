@@ -7305,6 +7305,7 @@ canvas {
 }
 .controls ul {
   float: left;
+  width: 50%;
 }
 .controls ul li {
   width: 75px;
