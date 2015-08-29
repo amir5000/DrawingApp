@@ -7294,7 +7294,12 @@ canvas {
   color: #000;
 }
 
-.btn .caret {
+.btn.btn-primary {
+  clear: both;
+  float: none;
+  display: block;
+}
+.btn.btn-primary .caret {
   margin: 0 0 0 10px;
 }
 
@@ -7347,7 +7352,7 @@ canvas {
 .controls #colorSelect {
   display: none;
   width: 50%;
-  float: right;
+  float: left;
 }
 .controls #newColor {
   display: block;

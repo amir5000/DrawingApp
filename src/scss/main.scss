@@ -24,7 +24,11 @@ canvas {
 	}
 }
 
-.btn {
+.btn.btn-primary {
+	clear: both;
+	float: none;
+	display: block;
+	
 	.caret {
 		margin: 0 0 0 10px;
 	}
@@ -84,7 +88,7 @@ canvas {
 	#colorSelect {
 		display: none;
 		width: 50%;
-		float: right;
+		float: left;
 	}
 
 	#newColor {
