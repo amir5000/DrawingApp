@@ -7299,6 +7299,10 @@ canvas {
   float: none;
   display: block;
 }
+.btn.btn-primary.clear {
+  width: 200px;
+  margin: 20px 0 0;
+}
 .btn.btn-primary .caret {
   margin: 0 0 0 10px;
 }
@@ -7307,6 +7311,10 @@ canvas {
   margin: 50px 0 20px;
   padding: 30px 15px;
   background-color: white;
+}
+.controls .clear-canv {
+  clear: both;
+  padding: 20px 0 0;
 }
 .controls ul {
   float: left;

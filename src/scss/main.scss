@@ -28,7 +28,10 @@ canvas {
 	clear: both;
 	float: none;
 	display: block;
-	
+	&.clear {
+		width: 200px;
+		margin: 20px 0 0;
+	}
 	.caret {
 		margin: 0 0 0 10px;
 	}
@@ -38,6 +41,11 @@ canvas {
 	margin: 50px 0 20px;
 	padding: 30px 15px;
 	background-color: white;
+
+	.clear-canv {
+		clear: both;
+		padding: 20px 0 0;
+	}
 	ul {
 		float: left;
 		width: 50%;
