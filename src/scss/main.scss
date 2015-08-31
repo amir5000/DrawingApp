@@ -3,6 +3,7 @@
 
 body {
 	background-color: #000;
+	font-size: ($font-size-base * 1.5);
 }
 canvas {
 	background: #fff;
@@ -52,7 +53,7 @@ canvas {
 		li {
 			width: 75px;
 			height: 75px;
-			margin: 10px;
+			margin: 10px 10px 10px 0;
 			float: left;
 			cursor: pointer;
 			&.selected {
