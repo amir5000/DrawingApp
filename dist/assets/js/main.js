@@ -23,6 +23,11 @@ $(".controls").on("click", "li", function(){
   //cache current color
   color = $(this).css("background-color");
   $('#strokeBox').css('background-color', color);
+  if ( $(this).hasClass('white') ) {
+    $('#strokeBox').css('border', '1px solid #000');
+  } else {
+    $('#strokeBox').css('border', 'none');
+  }
 });
 
 //When "New Color" is pressed
@@ -55,7 +60,7 @@ $("#addNewColor").click(function(){
   //Append the color to the controls ul
   var $newColor = $("<li></li>");
   $newColor.css("background-color", $("#newColor").css("background-color"));
-  $(".controls ul").append($newColor);
+  $(".color-picker").append($newColor);
   //Select the new color
   $newColor.click();
 });
