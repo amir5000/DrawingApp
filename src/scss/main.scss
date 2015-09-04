@@ -61,6 +61,11 @@ canvas {
 		    box-sizing: border-box;
 				box-shadow: inset 0px 0px 12px 2px #fff;
 			}
+
+			&.black {
+				background-color: black;
+			}
+			
 			&.red {
 				background-color: red;
 			}
