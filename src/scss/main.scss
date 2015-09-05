@@ -38,6 +38,10 @@ canvas {
 	}
 }
 
+.clear {
+	clear: both;
+}
+
 .controls {
 	margin: 50px 0 20px;
 	padding: 30px 15px;
@@ -49,7 +53,8 @@ canvas {
 	}
 	ul {
 		float: left;
-		width: 50%;
+		width: 46%;
+    margin: 0 4% 0 0;
 		li {
 			width: 75px;
 			height: 75px;
@@ -65,7 +70,7 @@ canvas {
 			&.black {
 				background-color: black;
 			}
-			
+
 			&.red {
 				background-color: red;
 			}
@@ -91,7 +96,7 @@ canvas {
 
 	.stroke-width {
 		clear: both;
-		width: 40%;
+		width: 46%;
 		#strokeBox {
 			display: inline-block;
 			margin: 10px 0 0 10px;

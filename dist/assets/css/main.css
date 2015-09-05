@@ -7308,6 +7308,10 @@ canvas {
   margin: 0 0 0 10px;
 }
 
+.clear {
+  clear: both;
+}
+
 .controls {
   margin: 50px 0 20px;
   padding: 30px 15px;
@@ -7319,7 +7323,8 @@ canvas {
 }
 .controls ul {
   float: left;
-  width: 50%;
+  width: 46%;
+  margin: 0 4% 0 0;
 }
 .controls ul li {
   width: 75px;
@@ -7354,7 +7359,7 @@ canvas {
 }
 .controls .stroke-width {
   clear: both;
-  width: 40%;
+  width: 46%;
 }
 .controls .stroke-width #strokeBox {
   display: inline-block;
