@@ -7341,15 +7341,6 @@ canvas {
 .controls ul li.black {
   background-color: black;
 }
-.controls ul li.red {
-  background-color: red;
-}
-.controls ul li.green {
-  background-color: green;
-}
-.controls ul li.blue {
-  background-color: blue;
-}
 .controls ul li.white {
   border: 2px solid #000;
   background-color: white;

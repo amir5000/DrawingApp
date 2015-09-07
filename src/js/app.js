@@ -4,10 +4,13 @@ var context = $canvas[0].getContext("2d");
 var lastEvent;
 var mouseDown = false;
 var stroke = 7;
+var opacityVal = 100;
+opacityVal = opacityVal / 100;
 
 context.canvas.width = $('.container').width();
 $('#strokeVal').text(stroke + ' px');
 $('#strokeBox').width(stroke).css('background-color', color);
+$('#opacityVal').text(opacityVal);
 $(window).on('resize', function(){
   context.canvas.width = $('.container').width();
 });
@@ -42,7 +45,8 @@ function changeColor() {
   var r = $("#red").val();
   var g = $("#green").val();
   var b = $("#blue").val();
-  $("#newColor").css("background-color", "rgb(" + r + "," + g +", " + b + ")");
+  var opacity = $("#opacity").val() / 100;
+  $("#newColor").css("background-color", "rgba(" + r + "," + g +", " + b + ", " + opacity + ")");
 }
 
 function changeStroke() {
@@ -51,9 +55,20 @@ function changeStroke() {
   $('#strokeBox').width(stroke);
 }
 
+function changeOpacity() {
+  opacityVal = $(this).val() / 100;
+  var r = $("#red").val();
+  var g = $("#green").val();
+  var b = $("#blue").val();
+  var opacity = opacityVal;
+  $(".selected").css("background-color", "rgba(" + r + "," + g +", " + b + ", " + opacity + ")");
+  $('#opacityVal').text(opacityVal);
+}
+
 //When color sliders change
 $("#stroke").change(changeStroke);
 $(".sliders input[type=range]").change(changeColor);
+$("#opacity").change(changeOpacity);
 
 //When "Add Color" is pressed
 $("#addNewColor").click(function(){
