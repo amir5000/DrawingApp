@@ -30,11 +30,6 @@
 				Color Picker:
 			</p>
 			<li class="black selected"></li>
-			<p class="clear">
-				<label for="opacity">Opacity:<p id="opacityVal"></p></label>
-				<input id="opacity" name="opacity" type="range" min=0 max=100 value=100 />
-			</p>
-
 		</ul>
 		<ul class="list-unstyled">
 			<p>
@@ -46,7 +41,10 @@
 				<a href="/" class="btn clear btn-primary">Clear</a>
 			</p>
 		</ul>
-		<br>
+		<div class="clear opacity">
+			<label for="opacity">Opacity:<p id="opacityVal"></p></label>
+			<input id="opacity" name="opacity" type="range" min=0 max=100 value=100 />
+		</div>
 		<div class="stroke-width">
 				<label for="stroke">Brush Size:<div id="strokeBox"></div><p id="strokeVal"></p></label>
 				<input id="stroke" name="stroke" type="range" min=5 max=100 value=7 />

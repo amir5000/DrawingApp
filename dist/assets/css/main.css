@@ -7321,6 +7321,11 @@ canvas {
   clear: both;
   padding: 20px 0 0;
 }
+.controls .opacity {
+  float: left;
+  width: 46%;
+  margin: 0 4% 0 0;
+}
 .controls ul {
   float: left;
   width: 46%;
