@@ -62,6 +62,7 @@ function changeOpacity() {
   var b = $("#blue").val();
   var opacity = opacityVal;
   $(".selected").css("background-color", "rgba(" + r + "," + g +", " + b + ", " + opacity + ")");
+  color = $(".selected").css("background-color");
   $('#opacityVal').text(opacityVal);
 }
 
