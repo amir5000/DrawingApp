@@ -104,7 +104,7 @@ $canvas.mousedown(function(e){
 });
 
 function getXY(e) {
-  var r = 100;
-  var rx = 20;
-  return {x: e.clientX - rx, y: e.clientY - r}
+  var rect = document.getElementById('canvas');
+  var r = rect.getBoundingClientRect();
+  return {x: e.clientX - r.left, y: e.clientY - r.top}
 }
