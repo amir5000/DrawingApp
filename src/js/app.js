@@ -1,5 +1,6 @@
 var color = $(".selected").css("background-color");
 var $canvas = $("canvas");
+var prev;
 var context = $canvas[0].getContext("2d");
 var lastEvent;
 var mouseDown = false;
@@ -83,21 +84,27 @@ $("#addNewColor").click(function(){
 
 //On mouse events on the canvas
 $canvas.mousedown(function(e){
-  lastEvent = e;
+  prev = getXY(e);
   mouseDown = true;
 }).mousemove(function(e){
   //Draw lines
   if(mouseDown) {
+    var point = getXY(e);
     context.beginPath();
-    context.moveTo(lastEvent.offsetX, lastEvent.offsetY);
-    context.lineTo(e.offsetX, e.offsetY);
+    context.moveTo(prev.x, prev.y);
+    context.lineTo(point.x, point.y);
     context.strokeStyle = color;
     context.lineWidth = stroke;
+    context.lineCap = "round";
     context.stroke();
-    lastEvent = e;
+    prev = point;
   }
 }).mouseup(function(){
   mouseDown = false;
-}).mouseleave(function(){
-  $canvas.mouseup();
 });
+
+function getXY(e) {
+  var r = 100;
+  var rx = 20;
+  return {x: e.clientX - rx, y: e.clientY - r}
+}
