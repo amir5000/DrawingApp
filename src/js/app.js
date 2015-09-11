@@ -8,7 +8,7 @@ var stroke = 7;
 var opacityVal = 100;
 opacityVal = opacityVal / 100;
 
-context.canvas.width = $('.container').width();
+context.canvas.width = $(window).width();
 $('#strokeVal').text(stroke + ' px');
 $('#strokeBox').width(stroke).css('background-color', color);
 $('#opacityVal').text(opacityVal);
