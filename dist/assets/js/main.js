@@ -13,14 +13,13 @@ $('#strokeVal').text(stroke + ' px');
 $('#strokeBox').width(stroke).css('background-color', color);
 $('#opacityVal').text(opacityVal);
 $(window).on('resize', function(){
-  context.canvas.width = $('.container').width();
+  context.canvas.width = $(window).width();
 });
 
 
 //When clicking on control list items
 $(".controls").on("click", "li", function(){
   //Deselect sibling elements
-  console.log($(this));
   $(".controls li").removeClass("selected");
   //Select clicked element
   $(this).addClass("selected");
