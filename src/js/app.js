@@ -1,8 +1,10 @@
 var color = $(".selected").css("background-color");
 var $canvas = $("canvas");
-var prev;
 var context = $canvas[0].getContext("2d");
 var lastEvent;
+var canvas;
+var ctx;
+var lastPt=null;
 var mouseDown = false;
 var stroke = 7;
 var opacityVal = 100;
@@ -81,29 +83,29 @@ $("#addNewColor").click(function(){
   $newColor.click();
 });
 
-//On mouse events on the canvas
-$canvas.mousedown(function(e){
-  prev = getXY(e);
-  mouseDown = true;
-}).mousemove(function(e){
-  //Draw lines
-  if(mouseDown) {
-    var point = getXY(e);
-    context.beginPath();
-    context.moveTo(prev.x, prev.y);
-    context.lineTo(point.x, point.y);
-    context.strokeStyle = color;
-    context.lineWidth = stroke;
-    context.lineCap = "round";
-    context.stroke();
-    prev = point;
-  }
-}).mouseup(function(){
-  mouseDown = false;
-});
+function init() {
+  var touchzone = document.getElementById("canvas");
+  touchzone.addEventListener("touchmove", draw, false);
+  touchzone.addEventListener("touchend", end, false);
+  ctx = touchzone.getContext("2d");
+}
 
-function getXY(e) {
-  var rect = document.getElementById('canvas');
-  var r = rect.getBoundingClientRect();
-  return {x: e.clientX - r.left, y: e.clientY - r.top}
+function draw(e) {
+  e.preventDefault();
+  if(lastPt!=null) {
+    ctx.beginPath();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = stroke;
+    ctx.lineCap = "round";
+    ctx.moveTo(lastPt.x, lastPt.y);
+    ctx.lineTo(e.touches[0].pageX, e.touches[0].pageY);
+    ctx.stroke();
+  }
+  lastPt = {x:e.touches[0].pageX, y:e.touches[0].pageY};
+}
+
+function end(e) {
+  e.preventDefault();
+  // Terminate touch path
+  lastPt=null;
 }
