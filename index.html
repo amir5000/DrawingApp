@@ -7,7 +7,7 @@
 	<title>Drawing App</title>
 	<link rel="stylesheet" href="dist/assets/css/main.css" type="text/css" media="screen" title="no title" charset="utf-8">
 </head>
-<body onload="init()">
+<body onload="initTouchMoveCanvas()">
 	<canvas id="canvas" height="600">Canvas Element is not supported on the browser you are using, please use Chrome.</canvas>
 	<div class="controls clearfix">
 		<ul class="list-unstyled color-picker">
@@ -32,7 +32,7 @@
 		</div>
 		<div class="stroke-width">
 				<label for="stroke">Brush Size:<div id="strokeBox"></div><p id="strokeVal"></p></label>
-				<input id="stroke" name="stroke" type="range" min=5 max=100 value=7 />
+				<input id="stroke" name="stroke" type="range" min=2 max=100 value=2 />
 		</div>
 		<hr></hr>
 		<button id="revealColorSelect" class="btn btn-primary">New Color<i class="caret"></i></button>
