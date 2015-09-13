@@ -83,6 +83,8 @@ $("#addNewColor").click(function(){
   $newColor.click();
 });
 
+//Touch Events Support Starts
+
 function init() {
   var touchzone = document.getElementById("canvas");
   touchzone.addEventListener("touchmove", draw, false);
