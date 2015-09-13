@@ -15,7 +15,7 @@ $('#strokeVal').text(stroke + ' px');
 $('#strokeBox').width(stroke).css('background-color', color);
 $('#opacityVal').text(opacityVal);
 $(window).on('resize', function(){
-  context.canvas.width = $(window).width();
+context.canvas.width = $(window).width();
 });
 
 
@@ -99,7 +99,7 @@ function initTouchMoveCanvas() {
   function drawtouchmove(e) {
     e.preventDefault();
     var offset  = $canvas.offset();
-    if(lastPt!=null) {
+    if(lastPt !== null) {
       touchmovectx.beginPath();
       touchmovectx.strokeStyle = color;
       touchmovectx.lineWidth = stroke;
@@ -114,7 +114,7 @@ function initTouchMoveCanvas() {
   function drawmousemove(e) {
     e.preventDefault();
     var offset  = $canvas.offset();
-    if(lastPt!=null) {
+    if(lastPt !== null) {
       touchmovectx.beginPath();
       touchmovectx.strokeStyle = color;
       touchmovectx.lineWidth = stroke;
@@ -133,6 +133,11 @@ function initTouchMoveCanvas() {
 
   function endmousemove(e) {
     e.preventDefault();
-  touchmovezone.removeEventListener("mousemove", drawmousemove, false);
+    touchmovezone.removeEventListener("mousemove", drawmousemove, false);
     lastPt = null;
   }
+
+  $('#clear').click(function(){
+    context.canvas.width = $(window).width();
+    context.beginPath();
+  });
