@@ -7284,6 +7284,7 @@ canvas {
   border-radius: 5px;
   box-shadow: 5px 5px 12px 0px #333;
   cursor: url(../img/cursor.png), crosshair;
+  margin: 0 auto;
 }
 
 .navbar {
