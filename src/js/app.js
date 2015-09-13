@@ -2,11 +2,11 @@ var color = $(".selected").css("background-color");
 var $canvas = $("canvas");
 var context = $canvas[0].getContext("2d");
 var lastEvent;
-var canvas;
-var ctx;
-var lastPt=null;
+var touchmovezone;
+var touchmovectx;
+var lastPt = null;
 var mouseDown = false;
-var stroke = 7;
+var stroke = 2;
 var opacityVal = 100;
 opacityVal = opacityVal / 100;
 
@@ -85,29 +85,54 @@ $("#addNewColor").click(function(){
 
 //Touch Events Support Starts
 
-function init() {
-  var touchzone = document.getElementById("canvas");
-  touchzone.addEventListener("touchmove", draw, false);
-  touchzone.addEventListener("touchend", end, false);
-  ctx = touchzone.getContext("2d");
+function initTouchMoveCanvas() {
+  touchmovezone = document.getElementById("canvas");
+  touchmovezone.addEventListener("touchmove", drawtouchmove, false);
+  touchmovezone.addEventListener("touchend", endtouchmove, false);
+  touchmovezone.addEventListener("mousedown", function() {
+    touchmovezone.addEventListener("mousemove", drawmousemove, false);
+  }, false);
+  touchmovezone.addEventListener("mouseup", endmousemove, false);
+  touchmovectx = touchmovezone.getContext("2d");
 }
 
-function draw(e) {
-  e.preventDefault();
-  if(lastPt!=null) {
-    ctx.beginPath();
-    ctx.strokeStyle = color;
-    ctx.lineWidth = stroke;
-    ctx.lineCap = "round";
-    ctx.moveTo(lastPt.x, lastPt.y);
-    ctx.lineTo(e.touches[0].pageX, e.touches[0].pageY);
-    ctx.stroke();
+  function drawtouchmove(e) {
+    e.preventDefault();
+    var offset  = $canvas.offset();
+    if(lastPt!=null) {
+      touchmovectx.beginPath();
+      touchmovectx.strokeStyle = color;
+      touchmovectx.lineWidth = stroke;
+      touchmovectx.lineCap = "round";
+      touchmovectx.moveTo(lastPt.x-offset.left, lastPt.y-offset.top);
+      touchmovectx.lineTo(e.touches[0].pageX-offset.left, e.touches[0].pageY-offset.top);
+      touchmovectx.stroke();
+    }
+    lastPt = {x:e.touches[0].pageX, y:e.touches[0].pageY};
   }
-  lastPt = {x:e.touches[0].pageX, y:e.touches[0].pageY};
-}
 
-function end(e) {
-  e.preventDefault();
-  // Terminate touch path
-  lastPt=null;
-}
+  function drawmousemove(e) {
+    e.preventDefault();
+    var offset  = $canvas.offset();
+    if(lastPt!=null) {
+      touchmovectx.beginPath();
+      touchmovectx.strokeStyle = color;
+      touchmovectx.lineWidth = stroke;
+      touchmovectx.lineCap = "round";
+      touchmovectx.moveTo(lastPt.x-offset.left, lastPt.y-offset.top);
+      touchmovectx.lineTo(e.pageX-offset.left, e.pageY-offset.top);
+      touchmovectx.stroke();
+    }
+    lastPt = {x:e.pageX, y:e.pageY};
+  }
+
+  function endtouchmove(e) {
+    e.preventDefault();
+    lastPt = null;
+  }
+
+  function endmousemove(e) {
+    e.preventDefault();
+  touchmovezone.removeEventListener("mousemove", drawmousemove, false);
+    lastPt = null;
+  }
