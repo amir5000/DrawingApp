@@ -9,7 +9,6 @@ var mouseDown = false;
 var stroke = 2;
 var opacityVal = 100;
 opacityVal = opacityVal / 100;
-var fps = 35;
 
 context.canvas.width = $(window).width();
 $('#strokeVal').text(stroke + ' px');
@@ -99,38 +98,32 @@ function initTouchMoveCanvas() {
 
   function drawtouchmove(e) {
     e.preventDefault();
-    setTimeout(function() {
-      requestAnimationFrame(drawtouchmove);
-      var offset  = $canvas.offset();
-      if(lastPt !== null) {
-        touchmovectx.beginPath();
-        touchmovectx.strokeStyle = color;
-        touchmovectx.lineWidth = stroke;
-        touchmovectx.lineCap = "round";
-        touchmovectx.moveTo(lastPt.x-offset.left, lastPt.y-offset.top);
-        touchmovectx.lineTo(e.touches[0].pageX-offset.left, e.touches[0].pageY-offset.top);
-        touchmovectx.stroke();
-      }
-      lastPt = {x:e.touches[0].pageX, y:e.touches[0].pageY};
-    }, 1000 / fps);
+    var offset  = $canvas.offset();
+    if(lastPt !== null) {
+      touchmovectx.beginPath();
+      touchmovectx.strokeStyle = color;
+      touchmovectx.lineWidth = stroke;
+      touchmovectx.lineCap = "round";
+      touchmovectx.moveTo(lastPt.x-offset.left, lastPt.y-offset.top);
+      touchmovectx.lineTo(e.touches[0].pageX-offset.left, e.touches[0].pageY-offset.top);
+      touchmovectx.stroke();
+    }
+    lastPt = {x:e.touches[0].pageX, y:e.touches[0].pageY};
   }
 
   function drawmousemove(e) {
     e.preventDefault();
-    setTimeout(function() {
-      requestAnimationFrame(drawtouchmove);
-      var offset  = $canvas.offset();
-      if(lastPt !== null) {
-        touchmovectx.beginPath();
-        touchmovectx.strokeStyle = color;
-        touchmovectx.lineWidth = stroke;
-        touchmovectx.lineCap = "round";
-        touchmovectx.moveTo(lastPt.x-offset.left, lastPt.y-offset.top);
-        touchmovectx.lineTo(e.pageX-offset.left, e.pageY-offset.top);
-        touchmovectx.stroke();
-      }
-      lastPt = {x:e.pageX, y:e.pageY};
-    }, 1000 / fps);
+    var offset  = $canvas.offset();
+    if(lastPt !== null) {
+      touchmovectx.beginPath();
+      touchmovectx.strokeStyle = color;
+      touchmovectx.lineWidth = stroke;
+      touchmovectx.lineCap = "round";
+      touchmovectx.moveTo(lastPt.x-offset.left, lastPt.y-offset.top);
+      touchmovectx.lineTo(e.pageX-offset.left, e.pageY-offset.top);
+      touchmovectx.stroke();
+    }
+    lastPt = {x:e.pageX, y:e.pageY};
   }
 
   function endtouchmove(e) {
