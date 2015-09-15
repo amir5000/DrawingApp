@@ -12,10 +12,10 @@ opacityVal = opacityVal / 100;
 
 context.canvas.width = $(window).width();
 $('#strokeVal').text(stroke + ' px');
-$('#strokeBox').width(stroke).css('background-color', color);
+$('#strokeBox').width(stroke).height(stroke).css('background-color', color);
 $('#opacityVal').text(opacityVal);
 $(window).on('resize', function(){
-context.canvas.width = $(window).width();
+  context.canvas.width = $(window).width();
 });
 
 
@@ -30,8 +30,10 @@ $(".controls").on("click", "li", function(){
   $('#strokeBox').css('background-color', color);
   if ( $(this).hasClass('white') ) {
     $('#strokeBox').css('border', '1px solid #000');
+    $('#revealColorSelect').attr("disabled", true);
   } else {
     $('#strokeBox').css('border', 'none');
+    $('#revealColorSelect').attr("disabled", false);
   }
 });
 
@@ -55,6 +57,7 @@ function changeStroke() {
   stroke = $(this).val();
   $('#strokeVal').text(stroke + ' px');
   $('#strokeBox').width(stroke);
+  $('#strokeBox').height(stroke);
 }
 
 function changeOpacity() {
