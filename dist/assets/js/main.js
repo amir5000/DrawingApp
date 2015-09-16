@@ -1,5 +1,6 @@
 var color = $(".selected").css("background-color");
 var $canvas = $("canvas");
+var controlsSection = $(".controls");
 var context = $canvas[0].getContext("2d");
 var lastEvent;
 var touchmovezone;
@@ -10,17 +11,32 @@ var stroke = 2;
 var opacityVal = 100;
 opacityVal = opacityVal / 100;
 
-context.canvas.width = $(window).width();
+
 $('#strokeVal').text(stroke + ' px');
 $('#strokeBox').width(stroke).height(stroke).css('background-color', color);
 $('#opacityVal').text(opacityVal);
-$(window).on('resize', function(){
+$(window).on('resize load', function(){
   context.canvas.width = $(window).width();
+  context.canvas.height = $(window).height();
+});
+$('.controls-btn').on('click', function() {
+
+  controlsSection.toggleClass('open close');
+    if (controlsSection.hasClass('open')){
+      $(this).text('-').css({
+        'background-color': '#fff',
+        'color': '#000'
+      });
+    } else {
+      $(this).text('+').css({
+        'background-color': '#000',
+        'color': '#fff'
+      });
+    }
 });
 
-
 //When clicking on control list items
-$(".controls").on("click", "li", function(){
+controlsSection.on("click", "li", function() {
   //Deselect sibling elements
   $(".controls li").removeClass("selected");
   //Select clicked element
@@ -29,10 +45,9 @@ $(".controls").on("click", "li", function(){
   color = $(this).css("background-color");
   $('#strokeBox').css('background-color', color);
   if ( $(this).hasClass('white') ) {
-    $('#strokeBox').css('border', '1px solid #000');
     $('#revealColorSelect').attr("disabled", true);
+    stroke = 50;
   } else {
-    $('#strokeBox').css('border', 'none');
     $('#revealColorSelect').attr("disabled", false);
   }
 });
@@ -60,13 +75,27 @@ function changeStroke() {
   $('#strokeBox').height(stroke);
 }
 
+function hexToRgb(hex) {
+    // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
+    var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+    hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+        return r + r + g + g + b + b;
+    });
+
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+}
+
+var bgcolor = $(".selected").css("background-color");
+
 function changeOpacity() {
   opacityVal = $(this).val() / 100;
-  var r = $("#red").val();
-  var g = $("#green").val();
-  var b = $("#blue").val();
-  var opacity = opacityVal;
-  $(".selected").css("background-color", "rgba(" + r + "," + g +", " + b + ", " + opacity + ")");
+  var hex = hexToRgb(bgcolor);
+  $(".selected").css("background-color", "rgba(" + hex +"," + opacityVal + ")");
   color = $(".selected").css("background-color");
   $('#opacityVal').text(opacityVal);
 }
@@ -107,6 +136,7 @@ function initTouchMoveCanvas() {
       touchmovectx.strokeStyle = color;
       touchmovectx.lineWidth = stroke;
       touchmovectx.lineCap = "round";
+      touchmovectx.lineJoin = "round";
       touchmovectx.moveTo(lastPt.x-offset.left, lastPt.y-offset.top);
       touchmovectx.lineTo(e.touches[0].pageX-offset.left, e.touches[0].pageY-offset.top);
       touchmovectx.stroke();

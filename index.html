@@ -8,8 +8,9 @@
 	<link rel="stylesheet" href="dist/assets/css/main.css" type="text/css" media="screen" title="no title" charset="utf-8">
 </head>
 <body onload="initTouchMoveCanvas()">
+	<button class="btn controls-btn" type="button">+</button>
 	<canvas id="canvas" height="600">Canvas Element is not supported on the browser you are using, please use Chrome.</canvas>
-	<div class="controls clearfix">
+	<div class="controls close clearfix">
 		<ul class="list-unstyled color-picker">
 			<p>
 				Color Picker:
@@ -34,11 +35,10 @@
 				<label for="stroke">Brush Size:<div id="strokeBox"></div><p id="strokeVal"></p></label>
 				<input id="stroke" name="stroke" type="range" min=2 max=100 value=2 />
 		</div>
-		<hr></hr>
 		<button id="revealColorSelect" class="btn btn-primary">New Color<i class="caret"></i></button>
 		<div id="colorSelect">
 			<span id="newColor"></span>
-			<button id="addNewColor" class="btn btn-primary">Add Color</button>
+
 			<div class="sliders">
 				<p>
 					<label for="red">Red</label>
@@ -53,6 +53,7 @@
 					<input id="blue" name="blue" type="range" min=0 max=255 value=0 />
 				</p>
 			</div>
+			<button id="addNewColor" class="btn btn-primary">Add Color</button>
 		</div>
 	</div>
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
