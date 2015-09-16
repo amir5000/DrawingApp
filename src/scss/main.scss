@@ -55,18 +55,32 @@ canvas {
   position: fixed;
   top: 0;
   width: 50px;
+	z-index: 99999;
 }
 
 .controls {
-	background-color: white;
-	bottom: 0;
-  height: 0;
+	background-color: rgba(255,255,255,0.9);
+	top: 0;
   margin: 0;
   overflow: hidden;
   padding: 0;
   position: fixed;
-  width: 0;
-	transition: all 0.4s ease;
+
+	&.open {
+		background-color: rgba(0,0,0,0.9);
+		width: 100%;
+		height: auto;
+		opacity: 1;
+		padding: 20px 70px;
+		transition: all 0.4s ease;
+	}
+
+	&.close {
+		width: 0;
+		height: 0;
+		opacity: 0;
+		transition: all 0.4s ease;
+	}
 
 	.clear-canv {
 		clear: both;
@@ -77,8 +91,16 @@ canvas {
 		float: left;
 		width: 46%;
     margin: 0 4% 0 0;
+		p {
+		  float: right;
+		  margin: 0 0 0 10px;
+		}
+	}
+	label {
+		color: white;
 	}
 	ul {
+		color: white;
 		float: left;
 		width: 46%;
     margin: 0 4% 0 0;
@@ -95,12 +117,12 @@ canvas {
 			}
 
 			&.black {
-				background-color: rgba(0, 0, 0, 1);;
+				background-color: black;
 			}
 
 			&.white {
 				border: 2px solid #000;
-				background-color: rgba(255, 255, 255, 1);
+				background-color: white;
 
 				&.selected {
 					box-shadow: inset 0px 0px 12px 2px #000;
@@ -112,10 +134,16 @@ canvas {
 	.stroke-width {
 		clear: both;
 		width: 46%;
+		p {
+		  float: right;
+		  margin: 0 0 0 110px;
+		}
 		#strokeBox {
 			display: inline-block;
 			margin: 10px 0 0 10px;
 			height: 10px;
+			border-radius: 50%;
+			border: 1px solid #fff;
 		}
 	}
 
@@ -131,4 +159,95 @@ canvas {
 		height: 75px;
 		margin: 10px;
 	}
+}
+
+// input range slider CSS
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  background: #fff;
+  border-radius: 25px;
+  border: 0px solid #000101;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 39px;
+  border-radius: 7px;
+  background: #AAA;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3.6px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #fff;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  background: #fff;
+  border-radius: 25px;
+  border: 0px solid #000101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 39px;
+  border-radius: 7px;
+  background: #AAA;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 39px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #fff;
+  border: 0px solid #000101;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: #fff;
+  border: 0px solid #000101;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 39px;
+  border-radius: 7px;
+  background: #AAA;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #fff;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #fff;
 }
