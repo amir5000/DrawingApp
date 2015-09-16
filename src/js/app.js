@@ -10,12 +10,13 @@ var stroke = 2;
 var opacityVal = 100;
 opacityVal = opacityVal / 100;
 
-context.canvas.width = $(window).width();
+
 $('#strokeVal').text(stroke + ' px');
 $('#strokeBox').width(stroke).height(stroke).css('background-color', color);
 $('#opacityVal').text(opacityVal);
-$(window).on('resize', function(){
+$(window).on('resize load', function(){
   context.canvas.width = $(window).width();
+  context.canvas.height = $(window).height();
 });
 
 

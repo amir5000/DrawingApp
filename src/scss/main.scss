@@ -7,9 +7,8 @@ body {
 }
 canvas {
 	background: #fff;
+	border-radius: 0;
 	display: block;
-	border-radius: 5px;
-	box-shadow: 5px 5px 12px 0px #333;
 	margin: 0 auto;
 	cursor: url(../img/cursor.png), crosshair;
 
@@ -44,10 +43,30 @@ canvas {
 	clear: both;
 }
 
+.controls-btn {
+	background-color: #000;
+	border-radius: 0;
+	color: #fff;
+  font-size: 30px;
+  height: 50px;
+  left: 0;
+	line-height: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  width: 50px;
+}
+
 .controls {
-	margin: 50px 0 20px;
-	padding: 30px 15px;
 	background-color: white;
+	bottom: 0;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: fixed;
+  width: 0;
+	transition: all 0.4s ease;
 
 	.clear-canv {
 		clear: both;
