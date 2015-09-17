@@ -47,6 +47,9 @@ controlsSection.on("click", "li", function() {
   if ( $(this).hasClass('white') ) {
     $('#revealColorSelect').attr("disabled", true);
     stroke = 50;
+    $('#strokeVal').text(stroke + ' px');
+    $('#strokeBox').width(stroke);
+    $('#strokeBox').height(stroke);
   } else {
     $('#revealColorSelect').attr("disabled", false);
   }
