@@ -51,6 +51,7 @@ controlsSection.on("click", "li", function() {
     $('#strokeVal').text(stroke + ' px');
     $('#strokeBox').width(stroke);
     $('#strokeBox').height(stroke);
+    $("#stroke").val(50);
   } else {
     $('#revealColorSelect').attr("disabled", false);
   }
