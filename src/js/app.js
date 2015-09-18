@@ -32,6 +32,7 @@ $('.controls-btn').on('click', function() {
         'background-color': '#000',
         'color': '#fff'
       });
+      $("#colorSelect").slideUp();
     }
 });
 
