@@ -19,21 +19,34 @@ $(window).on('resize load', function(){
   context.canvas.width = $(window).width();
   context.canvas.height = $(window).height();
 });
-$('.controls-btn').on('click', function() {
 
+// open controlls panel
+$('.controls-btn').on('click', function() {
   controlsSection.toggleClass('open close');
     if (controlsSection.hasClass('open')){
-      $(this).text('-').css({
+      $(this).find('span').text('-');
+      $(this).css({
         'background-color': '#fff',
         'color': '#000'
       });
     } else {
-      $(this).text('+').css({
+      $(this).find('span').text('+');
+      $(this).css({
         'background-color': '#000',
         'color': '#fff'
       });
       $("#colorSelect").slideUp();
     }
+});
+
+// generate a random color
+$('.random-btn').click(function(){
+  var r = Math.floor((Math.random() * 255) + 1);
+  var g = Math.floor((Math.random() * 255) + 1);
+  var b = Math.floor((Math.random() * 255) + 1);
+  var rgba = r+','+g+','+b+', 1';
+  $(".selected").css('background-color', 'rgba(' + rgba + ')');
+  color = $(".selected").css('background-color');
 });
 
 //When clicking on control list items

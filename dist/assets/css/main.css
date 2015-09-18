@@ -7317,14 +7317,34 @@ canvas {
   border-radius: 0;
   color: #fff;
   font-size: 30px;
-  height: 50px;
+  height: 60px;
   left: 0;
   line-height: 0;
   padding: 0;
   position: fixed;
   top: 0;
-  width: 50px;
+  width: 70px;
   z-index: 99999;
+}
+.controls-btn i {
+  font-size: 20px;
+}
+.controls-btn span {
+  margin: 0 0 0 10px;
+}
+
+.random-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  padding: 0;
+  height: 50px;
+  background-color: #000;
+  border-radius: 0;
+  color: #FFF;
+  font-size: 20px;
+  z-index: 999999;
 }
 
 .controls {
