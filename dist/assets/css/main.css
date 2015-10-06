@@ -7299,6 +7299,7 @@ canvas {
   clear: both;
   float: none;
   display: block;
+  box-shadow: 0px 0px 10px inset, 2px 2px 3px 0px #00f;
 }
 .btn.btn-primary.clear {
   width: 200px;
@@ -7391,7 +7392,7 @@ canvas {
   color: white;
   float: left;
   width: 46%;
-  margin: 0 4% 0 0;
+  margin: 0 3% 0 1%;
 }
 .controls ul li {
   width: 75px;
