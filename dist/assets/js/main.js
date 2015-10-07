@@ -29,6 +29,15 @@ $('.controls-btn').on('click', function() {
         'background-color': '#fff',
         'color': '#000'
       });
+      $('canvas').click(function() {
+        $("#colorSelect").slideUp();
+        controlsSection.removeClass('open');
+        controlsSection.addClass('close');
+        $('.controls-btn').css({
+          'background-color': '#000',
+          'color': '#fff'
+        }).find('span').text('+');
+      });
     } else {
       $(this).find('span').text('+');
       $(this).css({
