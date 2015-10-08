@@ -99,7 +99,7 @@ canvas {
   position: fixed;
 
 	&.open {
-		background-color: rgba(0,0,0,0.9);
+		background-color: rgba(0,0,0,0.96);
 		width: 100%;
 		height: auto;
 		opacity: 1;
@@ -166,6 +166,7 @@ canvas {
 	.stroke-width {
 		clear: both;
 		width: 46%;
+		margin: 30px 0;
 		p {
 		  float: right;
 		  margin: 0 0 0 110px;
