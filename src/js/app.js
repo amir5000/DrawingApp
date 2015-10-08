@@ -197,7 +197,7 @@ function initTouchMoveCanvas() {
     lastPt = null;
   }
 
-  $('#clear').click(function(){
+  $('#clear, .btn-clear').click(function(){
     context.canvas.width = $(window).width();
     context.beginPath();
   });
