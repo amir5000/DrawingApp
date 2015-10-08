@@ -26,6 +26,17 @@ canvas {
 	}
 }
 
+.btn-clear {
+    position: fixed;
+    top: 0;
+    left: 100px;
+    font-size: 32px;
+    padding: 7px 15px;
+    color: #FFF;
+    background-color: #000;
+    border-radius: 0;
+}
+
 .btn.btn-primary {
 	clear: both;
 	float: none;
