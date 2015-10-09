@@ -7298,7 +7298,18 @@ canvas {
 .btn-clear {
   position: fixed;
   top: 0;
-  left: 100px;
+  left: 175px;
+  font-size: 32px;
+  padding: 7px 15px;
+  color: #FFF;
+  background-color: #000;
+  border-radius: 0;
+}
+
+.btn-erase {
+  position: fixed;
+  top: 0;
+  left: 90px;
   font-size: 32px;
   padding: 7px 15px;
   color: #FFF;
