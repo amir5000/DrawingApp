@@ -7335,7 +7335,7 @@ canvas {
   clear: both;
 }
 
-.controls-btn {
+.btn-controls {
   background-color: #000;
   border-radius: 0;
   color: #fff;
@@ -7349,14 +7349,14 @@ canvas {
   width: 70px;
   z-index: 99999;
 }
-.controls-btn i {
+.btn-controls i {
   font-size: 20px;
 }
-.controls-btn span {
+.btn-controls span {
   margin: 0 0 0 10px;
 }
 
-.random-btn {
+.btn-random {
   position: absolute;
   top: 0;
   right: 0;
