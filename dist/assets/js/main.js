@@ -21,7 +21,7 @@ $(window).on('resize load', function(){
 });
 
 // open controlls panel
-$('.controls-btn').on('click', function() {
+$('.btn-controls').on('click', function() {
   controlsSection.toggleClass('open close');
     if (controlsSection.hasClass('open')){
       $(this).find('span').text('-');
@@ -33,7 +33,7 @@ $('.controls-btn').on('click', function() {
         $("#colorSelect").slideUp();
         controlsSection.removeClass('open');
         controlsSection.addClass('close');
-        $('.controls-btn').css({
+        $('.btn-controls').css({
           'background-color': '#000',
           'color': '#fff'
         }).find('span').text('+');
@@ -49,7 +49,7 @@ $('.controls-btn').on('click', function() {
 });
 
 // generate a random color
-$('.random-btn').click(function(){
+$('.btn-random').click(function(){
   var r = Math.floor((Math.random() * 255) + 1);
   var g = Math.floor((Math.random() * 255) + 1);
   var b = Math.floor((Math.random() * 255) + 1);
