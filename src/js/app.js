@@ -11,7 +11,6 @@ var stroke = 2;
 var opacityVal = 100;
 opacityVal = opacityVal / 100;
 
-
 $('#strokeVal').text(stroke + ' px');
 $('#strokeBox').width(stroke).height(stroke).css('background-color', color);
 $('#opacityVal').text(opacityVal);
@@ -100,6 +99,10 @@ function changeStroke() {
   $('#strokeVal').text(stroke + ' px');
   $('#strokeBox').width(stroke);
   $('#strokeBox').height(stroke);
+  $('#shadowBrush').css({
+     width: stroke,
+     height: stroke
+  });
 }
 
 function hexToRgb(hex) {
@@ -201,3 +204,4 @@ function initTouchMoveCanvas() {
     context.canvas.width = $(window).width();
     context.beginPath();
   });
+  

@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="dist/assets/css/main.css" type="text/css" media="screen" title="no title" charset="utf-8">
 </head>
 <body onload="initTouchMoveCanvas()">
+	<div id="shadowBrush"></div>
 	<button title="App Settings" class="btn btn-controls" type="button"><i class="fa fa-cog"></i><span>+</span></button>
 	<button title="Random Color" class="btn btn-random" type="button"><i class="fa fa-tasks"></i></button>
 	<button title="Clear Canvas" class="btn btn-clear" type="button">Clear</button>
@@ -16,9 +17,7 @@
 	<canvas id="canvas" height="600">Canvas Element is not supported on the browser you are using, please use Chrome.</canvas>
 	<div class="controls close clearfix">
 		<ul class="list-unstyled color-picker">
-			<p>
-				Color Picker:
-			</p>
+			<p>Color Picker:</p>
 			<li class="black selected"></li>
 		</ul>
 		<ul class="list-unstyled row">
