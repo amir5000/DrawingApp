@@ -17,7 +17,7 @@ canvas {
 #shadowBrush {
 	position: fixed;
 	border-radius: 50%;
-	left: 305px;
+	left: 225px;
 	top: 0;
 	border: 1px solid #000;
 	background-color: rgba(255,255,255,0.95);
@@ -38,7 +38,7 @@ canvas {
 .btn-clear {
     position: fixed;
     top: 0;
-    left: 175px;
+    left: 90px;
     font-size: 32px;
     padding: 7px 15px;
     color: #FFF;
@@ -55,7 +55,6 @@ canvas {
     background-color: #000;
     border-radius: 0;
 }
-
 .btn.btn-primary {
 	clear: both;
 	float: none;
