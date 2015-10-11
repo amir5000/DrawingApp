@@ -7,10 +7,16 @@ var touchmovezone;
 var touchmovectx;
 var lastPt = null;
 var mouseDown = false;
-var stroke = 2;
+var stroke = 12;
 var opacityVal = 100;
 opacityVal = opacityVal / 100;
 
+$('#shadowBrush').css({
+     width: stroke,
+     height: stroke,
+     backgroundColor: color,
+     borderColor: color
+  });
 $('#strokeVal').text(stroke + ' px');
 $('#strokeBox').width(stroke).height(stroke).css('background-color', color);
 $('#opacityVal').text(opacityVal);
@@ -55,6 +61,10 @@ $('.btn-random').click(function(){
   var rgba = r+','+g+','+b+', 1';
   $(".selected").css('background-color', 'rgba(' + rgba + ')');
   color = $(".selected").css('background-color');
+  $('#shadowBrush').css({
+    backgroundColor: 'rgba(' + rgba + ')',
+    borderColor: color
+  });
 });
 
 //When clicking on control list items
@@ -92,6 +102,10 @@ function changeColor() {
   var b = $("#blue").val();
   var opacity = $("#opacity").val() / 100;
   $("#newColor").css("background-color", "rgba(" + r + "," + g +", " + b + ", " + opacity + ")");
+  $('#shadowBrush').css({
+    backgroundColor: "rgba(" + r + "," + g +", " + b + ", " + opacity + ")",
+    borderColor: color
+  });
 }
 
 function changeStroke() {
