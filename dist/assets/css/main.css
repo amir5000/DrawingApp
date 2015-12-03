@@ -7390,7 +7390,8 @@ canvas {
 .controls.open {
   background-color: rgba(0, 0, 0, 0.96);
   width: 100%;
-  height: auto;
+  height: 700px;
+  overflow: auto;
   opacity: 1;
   padding: 20px 70px;
   -webkit-transition: all 0.4s ease;

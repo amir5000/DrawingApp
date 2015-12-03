@@ -111,15 +111,16 @@ canvas {
 .controls {
 	background-color: rgba(255,255,255,0.9);
 	top: 0;
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  position: fixed;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: fixed;
 
 	&.open {
 		background-color: rgba(0,0,0,0.96);
 		width: 100%;
-		height: auto;
+		height: 700px;
+		overflow: auto;
 		opacity: 1;
 		padding: 20px 70px;
 		transition: all 0.4s ease;
@@ -140,20 +141,24 @@ canvas {
 	.opacity {
 		float: left;
 		width: 46%;
-    margin: 0 4% 0 0;
+    	margin: 0 4% 0 0;
+
 		p {
 		  float: right;
 		  margin: 0 0 0 10px;
 		}
 	}
+
 	label {
 		color: white;
 	}
+
 	ul {
 		color: white;
 		float: left;
 		width: 46%;
     	margin: 0 3% 0 1%;
+
 		li {
 			width: 75px;
 			height: 75px;
@@ -185,6 +190,7 @@ canvas {
 		clear: both;
 		width: 46%;
 		margin: 30px 0;
+		
 		p {
 		  float: right;
 		  margin: 0 0 0 110px;
