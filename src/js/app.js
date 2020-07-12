@@ -3,8 +3,8 @@ let $canvas = $("canvas");
 let controlsSection = $(".controls");
 let context = $canvas[0].getContext("2d");
 let lastEvent;
-let touchmovezone;
-let touchmovectx;
+let touchMoveZone;
+let touchMoveCTX;
 let lastPt = null;
 let mouseDown = false;
 let stroke = 12;
@@ -157,21 +157,21 @@ function initTouchMoveCanvas() {
 		touchmovezone.addEventListener("mousemove", drawMouseMove, false);
 	}, false);
 	touchmovezone.addEventListener("mouseup", endMouseMove, false);
-	touchmovectx = touchmovezone.getContext("2d");
+	touchMoveCTX = touchmovezone.getContext("2d");
 }
 
   function drawTouchMove(e) {
     e.preventDefault();
     let offset  = $canvas.offset();
     if(lastPt !== null) {
-		touchmovectx.beginPath();
-		touchmovectx.strokeStyle = color;
-		touchmovectx.lineWidth = stroke;
-		touchmovectx.lineCap = "round";
-		touchmovectx.lineJoin = "round";
-		touchmovectx.moveTo(lastPt.x-offset.left, lastPt.y-offset.top);
-		touchmovectx.lineTo(e.touches[0].pageX-offset.left, e.touches[0].pageY-offset.top);
-		touchmovectx.stroke();
+		touchMoveCTX.beginPath();
+		touchMoveCTX.strokeStyle = color;
+		touchMoveCTX.lineWidth = stroke;
+		touchMoveCTX.lineCap = "round";
+		touchMoveCTX.lineJoin = "round";
+		touchMoveCTX.moveTo(lastPt.x-offset.left, lastPt.y-offset.top);
+		touchMoveCTX.lineTo(e.touches[0].pageX-offset.left, e.touches[0].pageY-offset.top);
+		touchMoveCTX.stroke();
     }
     lastPt = {x:e.touches[0].pageX, y:e.touches[0].pageY};
   }
@@ -180,13 +180,13 @@ function initTouchMoveCanvas() {
     e.preventDefault();
     let offset  = $canvas.offset();
     if(lastPt !== null) {
-      touchmovectx.beginPath();
-      touchmovectx.strokeStyle = color;
-      touchmovectx.lineWidth = stroke;
-      touchmovectx.lineCap = "round";
-      touchmovectx.moveTo(lastPt.x-offset.left, lastPt.y-offset.top);
-      touchmovectx.lineTo(e.pageX-offset.left, e.pageY-offset.top);
-      touchmovectx.stroke();
+      touchMoveCTX.beginPath();
+      touchMoveCTX.strokeStyle = color;
+      touchMoveCTX.lineWidth = stroke;
+      touchMoveCTX.lineCap = "round";
+      touchMoveCTX.moveTo(lastPt.x-offset.left, lastPt.y-offset.top);
+      touchMoveCTX.lineTo(e.pageX-offset.left, e.pageY-offset.top);
+      touchMoveCTX.stroke();
     }
     lastPt = {x:e.pageX, y:e.pageY};
   }
