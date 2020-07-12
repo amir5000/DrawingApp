@@ -26,32 +26,6 @@ $(window).on('resize load', function(){
 	context.canvas.height = $(window).height();
 });
 
-// open controls panel
-$('.btn-controls').on('click', function() {
-  	controlsSection.toggleClass('open close');
-    if (controlsSection.hasClass('open')){
-		$(this).find('span').text('-');
-		$(this).css({
-			'background-color': '#fff',
-			'color': '#000'
-		});
-		$('canvas').click(function() {
-			controlsSection.removeClass('open');
-			controlsSection.addClass('close');
-			$('.btn-controls').css({
-				'background-color': '#000',
-				'color': '#fff'
-			}).find('span').text('+');
-     	});
-    } else {
-		$(this).find('span').text('+');
-		$(this).css({
-			'background-color': '#000',
-			'color': '#fff'
-		});
-    }
-});
-
 // generate a random color
 $('.btn-random').click(function(){
 	let r = Math.floor((Math.random() * 255) + 1);
@@ -116,26 +90,59 @@ function hexToRgb(hex) {
 let bgColor = $(".selected").css("background-color");
 
 function changeOpacity() {
+	bgColor = $(".selected").css("background-color");
 	opacityVal = $(this).val() / 100;
-	console.log('opacityVal: ', opacityVal);
-	
-	console.log('bgColor: ', bgColor);
 	let hex;
 	if (String(bgColor).includes('rgb')) {
 		hex = bgColor.split('(').pop().split(')')[0];
 	} else {
 		hex = hexToRgb(bgColor);
 	}
-	console.log('hex: ', hex);
-	$(".selected").css("background-color", "rgba(" + hex +"," + opacityVal + ")");
-	color = $(".selected").css("background-color");
-	console.log('color: ', color);
+	$(".selected").css("opacity", opacityVal);
 	$('#opacityVal').text(opacityVal);
 }
 
 //When color sliders change
 $("#stroke").on('input', changeStroke);
 $("#opacity").on('input', changeOpacity);
+
+// open controls panel
+$('.btn-controls').on('click', function() {
+  	controlsSection.toggleClass('open close');
+    if (controlsSection.hasClass('open')){
+		$(this).find('span').text('-');
+		$(this).css({
+			'background-color': '#fff',
+			'color': '#000'
+		});
+		$('canvas').click(function() {
+			controlsSection.removeClass('open');
+			controlsSection.addClass('close');
+			let hex;
+			if (String(bgColor).includes('rgb')) {
+				hex = bgColor.split('(').pop().split(')')[0];
+			} else {
+				hex = hexToRgb(bgColor);
+			}
+			$(".selected").css("background-color", `rgba(${hex}, ${opacityVal})`);
+			color = $(".selected").css("background-color")
+			$('#shadowBrush').css({
+				backgroundColor: color,
+				borderColor: color
+			});
+			$('.btn-controls').css({
+				'background-color': '#000',
+				'color': '#fff'
+			}).find('span').text('+');
+     	});
+    } else {
+		$(this).find('span').text('+');
+		$(this).css({
+			'background-color': '#000',
+			'color': '#fff'
+		});
+    }
+});
 
 //When "Add Color" is pressed
 $("#addNewColor").click(function(){
