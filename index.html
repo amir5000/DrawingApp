@@ -12,11 +12,10 @@
 	<div id="shadowBrush"></div>
 	<button title="App Settings" class="btn btn-controls" type="button"><i class="fa fa-cog"></i><span>+</span></button>
 	<button title="Random Color" class="btn btn-random" type="button"><i class="fa fa-tasks"></i></button>
-	<button title="Clear Canvas" class="btn btn-clear" type="button">Clear</button>
 	<canvas id="canvas" height="600">Canvas Element is not supported on the browser you are using, please use Chrome.</canvas>
 	<div class="controls close clearfix">
 		<ul class="list-unstyled color-picker">
-			<p>Color Picker:</p>
+			<p>Colors:</p>
 			<li class="black selected"></li>
 		</ul>
 		<ul class="list-unstyled row">
@@ -37,28 +36,12 @@
 				<label for="stroke">Brush Size:<div id="strokeBox"></div><p id="strokeVal"></p></label>
 				<input id="stroke" name="stroke" type="range" min=2 max=100 value=2 />
 		</div>
-		<button id="revealColorSelect" class="btn btn-primary">New Color<i class="caret"></i></button>
 		<div id="colorSelect">
-			<span id="newColor"></span>
-
-			<div class="sliders">
-				<p>
-					<label for="red">Red</label>
-					<input id="red" name="red" type="range" min=0 max=255 value=0 />
-				</p>
-				<p>
-					<label for="green">Green</label>
-					<input id="green" name="green" type="range" min=0 max=255 value=0 />
-				</p>
-				<p>
-					<label for="blue">Blue</label>
-					<input id="blue" name="blue" type="range" min=0 max=255 value=0 />
-				</p>
-			</div>
+			<input type="color" id="colorPicker" name="colorPicker" value="#FFF">
 			<button id="addNewColor" class="btn btn-primary">Add Color</button>
 		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="dist/assets/js/main.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>	
+	<script src="dist/assets/js/main.min.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
