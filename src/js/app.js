@@ -150,14 +150,14 @@ $("#addNewColor").click(function(){
 //Touch Events Support Starts
 
 function initTouchMoveCanvas() {
-	touchmovezone = document.getElementById("canvas");
-	touchmovezone.addEventListener("touchmove", drawTouchMove, false);
-	touchmovezone.addEventListener("touchend", endTouchMove, false);
-	touchmovezone.addEventListener("mousedown", function() {
-		touchmovezone.addEventListener("mousemove", drawMouseMove, false);
+	touchMoveZone = document.getElementById("canvas");
+	touchMoveZone.addEventListener("touchmove", drawTouchMove, false);
+	touchMoveZone.addEventListener("touchend", endTouchMove, false);
+	touchMoveZone.addEventListener("mousedown", function() {
+		touchMoveZone.addEventListener("mousemove", drawMouseMove, false);
 	}, false);
-	touchmovezone.addEventListener("mouseup", endMouseMove, false);
-	touchMoveCTX = touchmovezone.getContext("2d");
+	touchMoveZone.addEventListener("mouseup", endMouseMove, false);
+	touchMoveCTX = touchMoveZone.getContext("2d");
 }
 
   function drawTouchMove(e) {
@@ -198,7 +198,7 @@ function initTouchMoveCanvas() {
 
   function endMouseMove(e) {
     e.preventDefault();
-    touchmovezone.removeEventListener("mousemove", drawMouseMove, false);
+    touchMoveZone.removeEventListener("mousemove", drawMouseMove, false);
     lastPt = null;
   }
 
